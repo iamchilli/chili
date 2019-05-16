@@ -28,7 +28,7 @@ defaults:
 paginate: 20
 
 #### Site
-title : Li's blog
+title : Daodao's blog
 tagline: Life of a statistician
 assets: /assets
 url:
