@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Linear model"
+date: 2019-05-15
+categories: Machine learning
+tags: [statistics, machine learning]
+image: http://gastonsanchez.com/images/blog/mathjax_logo.png
+---
+
 Model assumption
 ----------------
 
