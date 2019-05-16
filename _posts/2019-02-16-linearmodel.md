@@ -10,11 +10,11 @@ image: http://gastonsanchez.com/images/blog/mathjax_logo.png
 Model assumption
 ----------------
 
-*Y* = *X**β* + *ϵ*.
+*Y* = *X* * *β* + *ϵ*.
 
 The three assumptions are
 
-1.  Linear relation is correct. *E*(*ϵ*)=0 or *E*(*Y*)=*X**β*.
+1.  Linear relation is correct. *E*(*ϵ*)=0 or *E*(*Y*)=*Xβ*.
 2.  Variance of *y* is constant. *v**a**r*(*y*<sub>*i*</sub>)=*σ*
 3.  Indepdendence. *c**o**v*(*ϵ*<sub>*i*</sub>, *ϵ*<sub>*j*</sub>)=0.
 4.  (additional) Normal assmption. *Y* *N*(*X**β*, *σ**I*)
@@ -45,7 +45,9 @@ Tests
 Derived using informal methods based on finding sums of squares that have chi-square distributions and are independent.
 
 Or likelihood ratio
+
 $$
 LR=\\frac{max\_{H0}L(\\beta,\\sigma)}{max\_{Ha}L(\\beta,\\sigma)}
 $$
- Wald showed that under *H*<sub>0</sub>, −2*l**n**L**R* is *χ*<sup>2</sup>(*v*). In some cases, LR turns out to be t or F.
+
+ Wald showed that under $*H*<sub>0</sub>$, $−2*l**n**L**R*$ is $*χ*<sup>2</sup>(*v*)$. In some cases, LR turns out to be t or F.
