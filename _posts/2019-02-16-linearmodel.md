@@ -2,7 +2,7 @@
 layout: post
 title: "Linear model"
 date: 2019-05-15
-categories: Machine learning
+categories: "Machine learning"
 tags: [statistics, machine learning]
 image: http://gastonsanchez.com/images/blog/mathjax_logo.png
 ---
@@ -46,8 +46,6 @@ Derived using informal methods based on finding sums of squares that have chi-sq
 
 Or likelihood ratio
 
-$$
-LR=\\frac{max\_{H0}L(\\beta,\\sigma)}{max\_{Ha}L(\\beta,\\sigma)}
-$$
+$$LR=\frac{max_{H0}L(\beta,\sigma)}{max_{Ha}L(\beta,\sigma)}$$
 
  Wald showed that under $*H*<sub>0</sub>$, $−2*l**n**L**R*$ is $*χ*<sup>2</sup>(*v*)$. In some cases, LR turns out to be t or F.
