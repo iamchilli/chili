@@ -2,19 +2,25 @@
 title: "How to write blogger using R markdown"
 date: "2019-05-15"
 categories: Hacker
-tags: [statistics, machine learning]
+tags: [markdown, R, python,]
 ---
 
 
 **Step1.** Open the R studio, click file and select add new r markdown. Write the following header in the file and save as *.rmd*.
 
-``` r 
+ ```{R,include=TRUE}
 ---
 title: "Linear model"
 date: "2019-05-15"
 categories: Statistics
-tags: [statistics, machine learning]
+tags: []
 ---
+
+getwd()
+source("newpost.r")
+library(reticulate)
+use_python("C:/python3/python")
+
 ```
 
 
