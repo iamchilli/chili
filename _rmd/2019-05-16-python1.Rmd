@@ -1,15 +1,30 @@
 ---
-title: "Python (1)"
+title: "Introduction to Python (1)"
 date: "2019-05-16"
 categories: Python
 tags: [statistics, machine learning]
 ---
+
+## Condition
 
 ```{R,include=FALSE}
 library(reticulate)
 use_python("C:/python3/python")
 ```
 
+**R**
+```{R}
+a <- 6
+if (a < 5) {
+  b <- a
+} else if (a > 10) { 
+  b <- 0
+} else b <- 100
+
+b
+```
+
+**Python**
 ```{python}
 #condition
 a = 6
@@ -29,14 +44,48 @@ except:
     a = 0 + 1
 a
 
+```
+
+## Function
+**R**
+```{R}
+love <- funcion(a,b) {
+  aa <- a + b
+}
+love(3,4)
+
+```
+
+**Python**
+```{python}
 #function
 def love(a,b):
     added = a + b
     return(added)
     
 love(3,4)
+```
 
-#loop
+
+# Loop
+**R**
+```{R}
+a = 0
+while (a < 100) {
+  print(a)
+  a <- a + 1
+  if (a == 10)
+        break
+  if (a == 5)
+        next
+  a <- a + 1
+  
+}
+    
+
+```
+**Python**
+```{python}
 a = 0
 while a < 100:
     print(a)
@@ -47,9 +96,28 @@ while a < 100:
         continue
     a = a + 1
 
-    
+```
 
+## Example: Find max value and its position
+**R**
+```{R}
+a <- c(1,34,56,32,546,34,45,34)
+pos <- 0
+maxValue <- NA
+for (value in a) {
+  pos <- pos + 1
+  if (is.na(maxValue) == TRUE) {
+    maxValue <- value
+  } else if (maxValue < value) {
+    maxValue <- value
+    maxPos <- pos
+  }
+}
+print(paste0('max value is ', maxValue, ' at position ', maxPos) )
+```
 
+**Python**
+```{python}
 #Find max value and its position
 a = [1,34,56,32,546,34,45,34]
 max_value = None
