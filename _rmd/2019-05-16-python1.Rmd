@@ -8,6 +8,8 @@ tags: [statistics, machine learning]
 ## Condition
 
 ```{R,include=FALSE}
+getwd()
+source("newpost.r")
 library(reticulate)
 use_python("C:/python3/python")
 ```
