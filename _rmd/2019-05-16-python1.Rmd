@@ -51,7 +51,7 @@ a
 ## Function
 **R**
 ```{R}
-love <- funcion(a,b) {
+love <- function(a,b) {
   aa <- a + b
 }
 love(3,4)
