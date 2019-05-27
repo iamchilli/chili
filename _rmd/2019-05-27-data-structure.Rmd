@@ -108,16 +108,12 @@ In Python, dynamic arrays are called lists.
 ## Strengths:
 
 1. **Fast lookups.** Just like arrays, retrieving the element at a given index takes O(1)  time.
-
 2. **Variable size.** You can add as many items as you want, and the dynamic array will expand to hold them.
-
 3. **Cache-friendly.** Just like arrays, dynamic arrays place items right next to each other in memory, making efficient use of caches.
 
 ## Weaknesses:
 
 1. **Slow worst-case appends.** Usually, adding a new element at the end of the dynamic array takes O(1) time. But if the dynamic array doesn't have any room for the new item, it'll need to expand, which takes O(n)time. 
-
-
 2. **Costly inserts and deletes.** Just like arrays, elements are stored adjacent to each other. So adding or removing an item in the middle of the array requires "scooting over" other elements, which takes O(n)  time.
 
 
