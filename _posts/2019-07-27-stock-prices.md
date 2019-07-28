@@ -92,6 +92,8 @@ public int maxProfit(int[] prices) {
 }
 Now let's try to gain some insight of the solution above. If we examine the part inside the loop more carefully, T_i11 really just represents the maximum value of the negative of all stock prices up to the i-th day, or equivalently the minimum value of all the stock prices. As for T_i10, we just need to decide which action yields a higher profit, sell or rest. And if action sell is taken, the price at which we bought the stock is T_i11, i.e., the minimum value before the i-th day. This is exactly what we would do in reality if we want to gain maximum profit. I should point out that this is not the only way of solving the problem for this case. You may find some other nice solutions here.
 
+这种情况其实等价于 *最大子序列问题*。可以用类似两个指针算法。
+
 Case II: k = +Infinity
 
 If k is positive infinity, then there isn't really any difference between k and k - 1, which implies T[i-1][k-1][0] = T[i-1][k][0] and T[i-1][k-1][1] = T[i-1][k][1]. Therefore, we still have two unknown variables on each day: T[i][k][0] and T[i][k][1] with k = +Infinity, and the recurrence relations say:
