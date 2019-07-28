@@ -121,8 +121,8 @@ In Python, dynamic arrays are called lists.
 
 To make room, dynamic arrays automatically make a new, bigger underlying array. Usually twice as big.
 
-In industry we usually wave our hands and say dynamic arrays have a time cost of O(1)  for appends, even though strictly speaking that's only true for the average case or the amortized cost. The cost of doing mm appends has two parts:
+In industry we usually wave our hands and say dynamic arrays have a time cost of O(1)  for appends, even though strictly speaking that's only true for the average case or the amortized cost. The cost of doing m appends has two parts:
 
-  a. The cost of actually appending all mm items.
+  a. The cost of actually appending all m items.
   
   b. The cost of any "doubling" we need to do along the way.
