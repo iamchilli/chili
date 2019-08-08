@@ -5,7 +5,9 @@ categories: Python
 tags: [python]
 ---
 
+**permutation**
 
+第一种思路：除掉母树的数，进入下一层，这样避免取到相同的数。需要track母树和自己的数字。
 ```python
 #backtracking
 def permute(self, nums):
@@ -39,4 +41,20 @@ dfs(nums = [1, 2, 3] , path = [] , result = [] )
        |    |___dfs(nums = [] , path = [3, 1, 2] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2]] ) # added a new permutation to the result
        |___dfs(nums = [1] , path = [3, 2] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2]] )
             |___dfs(nums = [] , path = [3, 2, 1] , result = [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]] ) # added a new permutation to the result
+```
+
+另一种思路: 让每个数交换到这一层的第一个数，后面的数进入下一层。需要track每一层的第一个数地址。注意回到上一层的时候，第一个数要交换回来。
+```python
+def permute(self, nums):
+    def backtrack(start, end):
+        if start == end:
+            ans.append(nums[:]) #backtracking point
+        for i in range(start, end):
+            nums[start], nums[i] = nums[i], nums[start] #move each value in the first place, go next level
+            backtrack(start+1, end)
+            nums[start], nums[i] = nums[i], nums[start]
+
+    ans = []
+    backtrack(0, len(nums))
+    return ans
 ```
