@@ -21,6 +21,7 @@ def dfs(self, nums, path, res):
         self.dfs(nums[:i]+nums[i+1:], path+[nums[i]], res)
 ```
 
+举个栗子，nums=[1,2,3]
 ```python
 dfs(nums = [1, 2, 3] , path = [] , result = [] )
 |____ dfs(nums = [2, 3] , path = [1] , result = [] )
