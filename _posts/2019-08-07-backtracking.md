@@ -63,6 +63,52 @@ def permute(self, nums):
 
 
 
-**39.Combination sum** 给定一个无重复元素的数组 *candidates* 和一个目标数 *target*，找出 *candidates* 中所有可以使数字和为 *target* 的组合。
+**39.Combination sum** 给定一个无重复元素的数组 *candidates* 和一个目标数 *target*，找出 *candidates* 中所有可以使数字和为 *target* 的组合。*candidates* 中的数字可以无限制重复被选取。
+```python
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        resv=[]
+        candidates.sort()
+        self.dfs(candidates,target,0,[],resv)        
+        return resv           
 
-*candidates* 中的数字可以无限制重复被选取。
+    def dfs(self,candidates, residule, start, curr, resv):
+        if residule == 0:
+                resv.append(curr)
+
+        for i in range(start,len(candidates)):
+
+            if candidates[i] > residule:  # sort and break, save time from residule<0
+                break
+            self.dfs(candidates, residule-candidates[i], i, curr+[candidates[i]], resv)
+```
+
+**40.Combination sum II** （含有相同元素的组合求和）
+```python
+class Solution:
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        candidates.sort() # Sorting is really helpful to avoid over counting easily
+        rev=[]
+        self.dfs(candidates,target,0,[],rev)        
+        return rev
+
+
+    def dfs(self,nums,residule,start,curr,rev):
+        if residule == 0:
+            rev.append(curr)
+            return
+
+        for i in range(start,len(nums)):
+        # Very important here! We don't use `i > 0` because we always want
+        # to count the first element in this recursive step even if it is the same
+        # as one before. To avoid overcounting, we just ignore the duplicates
+        # after the first element.
+        # if you want ot use 'i>0', you may need fo the way of slicing nums.
+            if i>start and nums[i] == nums[i-1]:
+                continue            
+            if nums[i] > residule:
+                break
+        # We change the start to `i + 1` because one element only could
+        # be used once
+            self.dfs(nums,residule-nums[i],i+1,curr+[nums[i]],rev)
+```
