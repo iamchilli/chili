@@ -11,7 +11,7 @@ Python 的列表 List 基本就是其它语言的 Array.
 ### Initialization 初始化
 List 的初始化一般用 List comprehension，往往能一行解决问题
 
-```python3
+```python
 function test() {
   console.log("notice the blank line before this function?");
 }
@@ -27,7 +27,7 @@ l = [[0] for i in range(cols) for j in range(rows)]
 
 ### 你可以轻松从后往前访问：
 
-```python3
+```python
 lastElement = l[-1]
 
 lastTwo = l[-2:]
