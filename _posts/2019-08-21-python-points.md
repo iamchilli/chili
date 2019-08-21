@@ -9,68 +9,52 @@ tags: [python]
 Python 的列表 List 基本就是其它语言的 Array.
 
 ### Initialization 初始化
-List 的初始化一般用 List comprehension，往往能一行解决问题
+List 的初始化一般用 List comprehension，往往能一行解决问题.
 
 ```python
-function test() {
-  console.log("notice the blank line before this function?");
-}
-
-# 1d array
-l = [0 for _ in range(len(array)]
+l= [0 for _ in range(len(array)]
 # or
 l = [0] * len(array)
-
 # 2d
 l = [[0] for i in range(cols) for j in range(rows)]
 ```
 
-### 你可以轻松从后往前访问：
+你可以轻松从后往前访问：
 
 ```python
 lastElement = l[-1]
-
 lastTwo = l[-2:]
 
-for i in range(0, -10, -1)
+for i in range(0, -10, -1):
+  print(i)
 # 0, -1, -2, -3, -4, -5, -6, -7, -8, -9
 ```
 
-###copy 复制
+### copy 复制
 
-####shallow copy 浅拷贝
+shallow copy 浅拷贝. 浅复制的问题在于，如果 a 内部还有 list，那么这种嵌套的索引不能被复制
 
-l2 = l1[:]
-# or
-l2 = l1.copy()
-浅复制的问题在于，如果 l1 内部还有 list，那么这种嵌套的索引不能被复制，比如：
+deep copy 深拷贝. 所以如果要做深拷贝，要节制自带库 copy
 
-[Python] 纯文本查看 复制代码
-?
-01
-02
-03
-04
-05
+```python
+
 a = [1, 2, [3, 4]]
-b = a[:]
+b = a[:] # or b = a.copy()
 a[2].append(5)
 print(b)
 # [1, 2, [3, 4, 5]]
 
-
-####deep copy 深拷贝
-
-所以如果要做深拷贝，要节制自带库 copy
-
 import copy
+b = copy.deepcopy(a)
+print(b)
+# [1, 2, [3, 4]]
+```
 
-copy.deepcopy()
-
-enumerate 枚举
+### enumerate 枚举
 
 当我们需要枚举一个数组并同时获得值与 index 的时候可以使用：
 
+```python
 l = ["a", "b", "c"]
 
 for i, v in enumerate(l):
@@ -78,40 +62,24 @@ for i, v in enumerate(l):
 # 0 a
 # 1 b
 # 2 c
+```
 
-zip
+### zip
 
 zip 本意就是拉链，可以想象成将两个数组像拉链一样挨个聚合：
 
-[Python] 纯文本查看 复制代码
-?
-01
-02
-03
-04
-05
->>> x = [1, 2, 3]
->>> y = [4, 5, 6]
->>> zipped = zip(x, y)
->>> list(zipped)
+```python
+x = [1, 2, 3]
+y = [4, 5, 6]
+zipped = zip(x, y)
+list(zipped)
 [(1, 4), (2, 5), (3, 6)]
+```
 
-
-reduce
+### reduce
 
 reduce 可以分别对相邻元素使用同一种计算规则，同时每一步结果作为下一步的参数，很典型的函数式编程用法。
-[Bash shell] 纯文本查看 复制代码
-?
-01
-02
-03
-04
-05
-06
-07
-08
-09
-10
+```python
 # importing functools for reduce()
 import functools
 # initializing list
@@ -122,7 +90,7 @@ print ("The sum of the list elements is : ",end="")
 print (functools.reduce(lambda a,b : a+b,lis))
 
 # The sum of the list elements is : 17
-
+```
 
 map
 
