@@ -11,7 +11,11 @@ Python 的列表 List 基本就是其它语言的 Array.
 ### Initialization 初始化
 List 的初始化一般用 List comprehension，往往能一行解决问题
 
-```python
+```python3
+function test() {
+  console.log("notice the blank line before this function?");
+}
+
 # 1d array
 l = [0 for _ in range(len(array)]
 # or
@@ -21,18 +25,20 @@ l = [0] * len(array)
 l = [[0] for i in range(cols) for j in range(rows)]
 ```
 
-你可以轻松从后往前访问：
+### 你可以轻松从后往前访问：
 
+```python3
 lastElement = l[-1]
 
 lastTwo = l[-2:]
 
 for i in range(0, -10, -1)
 # 0, -1, -2, -3, -4, -5, -6, -7, -8, -9
+```
 
-copy 复制
+###copy 复制
 
-shallow copy 浅拷贝
+####shallow copy 浅拷贝
 
 l2 = l1[:]
 # or
@@ -53,7 +59,7 @@ print(b)
 # [1, 2, [3, 4, 5]]
 
 
-deep copy 深拷贝
+####deep copy 深拷贝
 
 所以如果要做深拷贝，要节制自带库 copy
 
@@ -187,7 +193,7 @@ def sortfunc(a, b):
       return a - b
 
 
-set
+# set
 
 set 的查找操作复杂度为O(1)，有时候可以替代dict 来存储中间过程。
 
@@ -195,7 +201,7 @@ add : set 的添加是 add 不是append
 remove vs discard: 都是删除操作，区别在于remove不存在的元素会报错，discard不会。
 union, intersection: 快速获得并集和交集，方便一些去重操作。
 
-dict
+# dict
 
 字典，相当于其它语言中的map, hashtable, hashmap之类的，读取操作也是O(1) 复杂度
 
