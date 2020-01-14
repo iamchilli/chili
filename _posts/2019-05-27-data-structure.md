@@ -1,7 +1,7 @@
 ---
 title: "Data stucture"
 date: "2019-05-27"
-categories: Coding
+categories: algorithm
 tags: [python, R]
 ---
 
@@ -142,7 +142,7 @@ original_list
 
 # Dynamic Array
 
-automatic resizing. 
+automatic resizing.
 
 In Python, dynamic arrays are called lists.
 
@@ -154,7 +154,7 @@ In Python, dynamic arrays are called lists.
 
 ## Weaknesses:
 
-1. **Slow worst-case appends.** Usually, adding a new element at the end of the dynamic array takes O(1) time. But if the dynamic array doesn't have any room for the new item, it'll need to expand, which takes O(n)time. 
+1. **Slow worst-case appends.** Usually, adding a new element at the end of the dynamic array takes O(1) time. But if the dynamic array doesn't have any room for the new item, it'll need to expand, which takes O(n)time.
 2. **Costly inserts and deletes.** Just like arrays, elements are stored adjacent to each other. So adding or removing an item in the middle of the array requires "scooting over" other elements, which takes O(n)  time.
 
 
@@ -165,5 +165,5 @@ To make room, dynamic arrays automatically make a new, bigger underlying array. 
 In industry we usually wave our hands and say dynamic arrays have a time cost of O(1)  for appends, even though strictly speaking that's only true for the average case or the amortized cost. The cost of doing mm appends has two parts:
 
   a. The cost of actually appending all mm items.
-  
+
   b. The cost of any "doubling" we need to do along the way.

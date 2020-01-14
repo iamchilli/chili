@@ -1,8 +1,8 @@
 ---
 title: "Algorithm: backtracking "
 date: "2019-08-07"
-categories: Python
-tags: [python]
+categories: Algorithm
+tags: [Algorithm]
 ---
 
 **46.permutation** 给定一个没有重复数字的序列，返回其所有可能的全排列。

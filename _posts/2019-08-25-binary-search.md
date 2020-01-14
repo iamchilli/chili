@@ -1,8 +1,8 @@
 ---
 title: "Algorithm: Binary search "
 date: "2019-08-25"
-categories: Python
-tags: [python]
+categories: Algorithm
+tags: [Algorithm]
 ---
 
 ## 704. Binary Search

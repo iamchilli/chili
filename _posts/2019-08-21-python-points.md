@@ -1,8 +1,8 @@
 ---
 title: "Algorithm: Useful Python tricks in an interview  "
 date: "2019-08-21"
-categories: Python
-tags: [python]
+categories: Algorithm
+tags: [Algorithm]
 ---
 
 ## List

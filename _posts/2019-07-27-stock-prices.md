@@ -1,8 +1,8 @@
 ---
 title: "Algorithm: Stock price problems "
 date: "2019-07-27"
-categories: Python
-tags: [python]
+categories: Algorithm
+tags: [Algorithm]
 ---
 
 ## Condition
