@@ -1,6 +1,6 @@
 ---
-title: "All about Random Forest"
-date: "20209-01-13"
+title: "ML: Random Forest"
+date: "2020-01-13"
 categories: Machine Learning
 tags: [DMachine Learning]
 ---
