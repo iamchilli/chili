@@ -2,7 +2,7 @@
 title: "ML: Random Forest"
 date: "2020-01-13"
 categories: Machine Learning
-tags: [DMachine Learning]
+tags: [Machine Learning]
 ---
 
 R random forest packages available for use.
