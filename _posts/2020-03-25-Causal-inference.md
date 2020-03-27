@@ -19,7 +19,7 @@ Therefore, we need
 
 It is important to remember Causal inference requires make some untestable assumptions.
 
-## Potential outcome and counterfactuals
+### Potential outcome and counterfactuals
 
 Treatment A on outcome Y: A=1 if receive treatment; A=0 otherwise.
 
@@ -27,9 +27,11 @@ Y<sup>1</sup> is the outcome that would be observed if treatment was set to A=1.
 
 - Before the treatment decision is made, any outcome is a **potential outcome**:  Y<sup>0</sup> and  Y<sup>1</sup>.
 
-- After the study, if my treatment was A=1, then my observed outcome is <sup>1</sup>, my **counterfactual outcome** is Y<sup>0</sup>.
+- After the study, if my treatment was A=1, then my observed outcome is Y<sup>1</sup>, my **counterfactual outcome** is Y<sup>0</sup>.
 
-## Hypothetical interventions
+Fundamental problem of Causal inference is that we can only observe one potential outcome.
+
+### Hypothetical interventions
 
 Make sure there is no hidden version of treatment. For example, to study weight on health, as weight is not directly manipulable, better to think of interventions that aim at manipulating weight. Like weight loss drug, exercise, smoking.
 
@@ -40,4 +42,18 @@ Race --> Name on resume
 Obesity --> drug
 socioeconomic status --> gift of money
 
-Key: try to think of an intervention that can be randomized in a hypothetical trial. Meaning of the outcome? Potentially actionable?
+**Key: try to think of an intervention that can be randomized in a hypothetical trial.** Meaning of the outcome? Potentially actionable?
+
+### set to v.s. given
+
+Average causal effect E(Y<sup>1</sup>-Y<sup>0</sup>) is not equal to E(Y|A=1)-E(Y|A=0).
+- E(Y<sup>1</sup>) is on whole population
+- E(Y|A=1) is on a subpopulation where A=1
+
+### assumptions
+
+1. Independency
+2. Consistency: potential outcome equals to observed outcome: E(Y<sup>1</sup>|A=1)=E(Y|A=1)
+3. Y<sup>1</sup>, Y<sup>0</sup> *ind of* A | X : E(Y<sup>1</sup>| X)=E(Y<sup>1</sup>|A=1, X)
+
+By above assumptions, E(Y<sup>1</sup>|X)=E(Y<sup>1</sup>|A=1,X)=E(Y|A=1,X), which is observed. Then we can take weighted average to get average causal effect.
