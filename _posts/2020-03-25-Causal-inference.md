@@ -34,19 +34,19 @@ Fundamental problem of Causal inference is that we can only observe one potentia
 ### set to v.s. given
 
 In general,
-    average causal effect E(Y<sup>1</sup>-Y<sup>0</sup>) is not equal to E(Y|A=1)-E(Y|A=0).
+    average causal effect E(Y<sup>1</sup>-Y<sup>0</sup>) is not equal to E(Y\|A=1)-E(Y\|A=0).
 - E(Y<sup>1</sup>) is on **whole population**, if everyone was treated as A=1
-- E(Y|A=1) is on a **subpopulation** who actually had A=1
+- E(Y\|A=1) is on a **subpopulation** who actually had A=1
 
 
 ### Causal Assumptions (identifiability)
 
 1. Stable unit treatment value assumption: no spillover, no interference, no crossover
-2. Consistency: potential outcome = observed outcome: E(Y<sup>1</sup>|A=1)=E(Y|A=1)
-3. Ignorability: Y<sup>1</sup>, Y<sup>0</sup> *ind of* A | X : E(Y<sup>1</sup>| X)=E(Y<sup>1</sup>|A=1, X)
-4. Positivity P(A=a|X=x)>0 for all a and x
+2. Consistency: potential outcome = observed outcome: E(Y<sup>1</sup>\|A=1)=E(Y\|A=1)
+3. Ignorability: Y<sup>1</sup>, Y<sup>0</sup> *ind of* A \| X : E(Y<sup>1</sup>| X)=E(Y<sup>1</sup>\|A=1, X)
+4. Positivity P(A=a\|X=x)>0 for all a and x
 
-By above assumptions, E(Y<sup>1</sup>|X)=E(Y<sup>1</sup>|A=1,X)=E(Y|A=1,X), which is observed. Then we can take weighted average to get average causal effect.
+By above assumptions, E(Y<sup>1</sup>\|X)=E(Y<sup>1</sup>\|A=1,X)=E(Y\|A=1,X), which is observed. Then we can take weighted average to get average causal effect.
 
 ### Hypothetical interventions, some designs
 
