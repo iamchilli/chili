@@ -31,7 +31,24 @@ Y<sup>1</sup> is the outcome that would be observed if treatment was set to A=1.
 
 Fundamental problem of Causal inference is that we can only observe one potential outcome.
 
-### Hypothetical interventions
+### set to v.s. given
+
+In general,
+    average causal effect E(Y<sup>1</sup>-Y<sup>0</sup>) is not equal to E(Y|A=1)-E(Y|A=0).
+- E(Y<sup>1</sup>) is on **whole population**, if everyone was treated as A=1
+- E(Y|A=1) is on a **subpopulation** who actually had A=1
+
+
+### Causal Assumptions (identifiability)
+
+1. Stable unit treatment value assumption: no spillover, no interference, no crossover
+2. Consistency: potential outcome = observed outcome: E(Y<sup>1</sup>|A=1)=E(Y|A=1)
+3. Ignorability: Y<sup>1</sup>, Y<sup>0</sup> *ind of* A | X : E(Y<sup>1</sup>| X)=E(Y<sup>1</sup>|A=1, X)
+4. Positivity P(A=a|X=x)>0 for all a and x
+
+By above assumptions, E(Y<sup>1</sup>|X)=E(Y<sup>1</sup>|A=1,X)=E(Y|A=1,X), which is observed. Then we can take weighted average to get average causal effect.
+
+### Hypothetical interventions, some designs
 
 Make sure there is no hidden version of treatment. For example, to study weight on health, as weight is not directly manipulable, better to think of interventions that aim at manipulating weight. Like weight loss drug, exercise, smoking.
 
@@ -42,18 +59,9 @@ Race --> Name on resume
 Obesity --> drug
 socioeconomic status --> gift of money
 
-**Key: try to think of an intervention that can be randomized in a hypothetical trial.** Meaning of the outcome? Potentially actionable?
+**Key**
+1. try to think of an intervention that can be randomized in a hypothetical trial.** Meaning of the outcome? Potentially actionable?
+2. try to think of an initation of the intervention, to avoid the potential confounder of past treatment by the cross-sectional design.  
+3. try to compare two active treatments, because subjects using active treatment are more alike.
 
-### set to v.s. given
-
-Average causal effect E(Y<sup>1</sup>-Y<sup>0</sup>) is not equal to E(Y|A=1)-E(Y|A=0).
-- E(Y<sup>1</sup>) is on whole population
-- E(Y|A=1) is on a subpopulation where A=1
-
-### assumptions
-
-1. Independency
-2. Consistency: potential outcome equals to observed outcome: E(Y<sup>1</sup>|A=1)=E(Y|A=1)
-3. Y<sup>1</sup>, Y<sup>0</sup> *ind of* A | X : E(Y<sup>1</sup>| X)=E(Y<sup>1</sup>|A=1, X)
-
-By above assumptions, E(Y<sup>1</sup>|X)=E(Y<sup>1</sup>|A=1,X)=E(Y|A=1,X), which is observed. Then we can take weighted average to get average causal effect.
+Example: yoga effect on BMI, initation of yoga compared with zomba
