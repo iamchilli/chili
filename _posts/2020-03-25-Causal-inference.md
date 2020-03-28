@@ -7,6 +7,8 @@ tags: [Causal inference]
 
 Introduction of concepts, methods and so on.
 
+## Concepts
+
 **Spurious Correlation** Many science reporting headlines do not use the forms of the word cause, but do get interpreted causally, e.g. Bill lived to be 105 years old. He said his secret was eating an apple a day.
 
 **Reverse Causality** Even if there is causal relationship, sometimes the direction is unclear, e.g. urban green space and exercise.
