@@ -67,3 +67,5 @@ socioeconomic status --> gift of money
 3. try to compare two active treatments, because subjects using active treatment are more alike.
 
 Example: yoga effect on BMI, initation of yoga compared with zomba
+
+## Causal diagram
