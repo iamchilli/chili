@@ -45,7 +45,7 @@ In general,
 
 1. Stable unit treatment value assumption: no spillover, no interference, no crossover
 2. Consistency: potential outcome = observed outcome: E(Y<sup>1</sup>\|A=1)=E(Y\|A=1)
-3. Ignorability: Y<sup>1</sup>, Y<sup>0</sup> *ind of* A \| X : E(Y<sup>1</sup>| X)=E(Y<sup>1</sup>\|A=1, X)
+3. Ignorability: Y<sup>1</sup>, Y<sup>0</sup> *ind of* A \| X : E(Y<sup>1</sup>\| X)=E(Y<sup>1</sup>\|A=1, X)
 4. Positivity P(A=a\|X=x)>0 for all a and x
 
 By above assumptions, E(Y<sup>1</sup>\|X)=E(Y<sup>1</sup>\|A=1,X)=E(Y\|A=1,X), which is observed. Then we can take weighted average to get average causal effect.
@@ -66,6 +66,50 @@ socioeconomic status --> gift of money
 2. try to think of an initation of the intervention, to avoid the potential confounder of past treatment by the cross-sectional design.  
 3. try to compare two active treatments, because subjects using active treatment are more alike.
 
-Example: yoga effect on BMI, initation of yoga compared with zomba
+Example: yoga effect on BMI, initiation of yoga compared with zumba
 
-## Causal diagram
+## Causal diagram: to find confounding
+
+Confounders are variables that affect both treatment and outcome.
+
+We need to block backdoor paths from treatment to outcome.
+
+3 types of paths:
+- folks   A<--E-->B  (A,B association)
+- chains  D-->E-->F  (D,F association)
+Paths can be blocked by conditioning on nodes in the path.
+- inverted folk D-->G<--F (D,F no association; G is known as *collider*)
+Collider is opposite, if conditioning on G, D and F are associated.
+
+
+## Methods
+
+### stratification
+
+Problems: Typically, there will be many X needed to achieve ignorability. Stratification would lead to empty cells.
+
+### Matching: to balance data
+
+Considering a DAG if we already selected X (Ignorability holds):
+
+  X  
+A-->Y
+
+- Randomized trials: erasing the arrow from X to A, no backdoor from A to Y.
+X is dealt with at the design phase.
+- Observational studies: the distribution of X is different for treatment groups.
+
+- greedy matching
+- optimal matching
+
+### propensity score matching
+
+Keypoint:
+- plot the propensity score to check positivity assumption
+- use exp transformed score to match
+
+### propensity score weighting
+
+The idea is to create a psydo sample
+
+### instrumental variable
